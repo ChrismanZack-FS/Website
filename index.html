@@ -323,6 +323,13 @@ https://www.tooplate.com/view/2115-marvel
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
 
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
+</form>
+
+
     <script>
   const form = document.querySelector("form[name='contact']");
   form.addEventListener("submit", async function (e) {
