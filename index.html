@@ -323,5 +323,26 @@ https://www.tooplate.com/view/2115-marvel
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
 
+    <script>
+  const form = document.querySelector("form[name='contact']");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(data).toString(),
+      });
+      alert("Thank you! Your message was sent.");
+      form.reset();
+    } catch (error) {
+      alert("Oops! There was a problem submitting the form.");
+    }
+  });
+</script>
+
+
   </body>
 </html>
